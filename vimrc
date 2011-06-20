@@ -11,12 +11,16 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" ack.vim
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 let g:kls_switcherPath = "~/bin/xkbswitchlang"
 
 set nocompatible
 filetype on                     " enables filetype detection
 filetype plugin on              " enables filetype specific plugins
 filetype plugin indent on       " enable loading indent file for filetype
+
 
 set backspace=indent,eol,start
 " visualbell off
@@ -34,6 +38,7 @@ set laststatus=2
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set ignorecase
+set ofu=syntaxcomplete#Complete
 set shiftwidth=4
 set softtabstop=4
 set scrolljump=5	" jump 5 lines when running out of the screen
@@ -83,7 +88,7 @@ map <leader>td <Plug>TaskList
 map <leader>g :GundoToggle<CR>
 
 
-let g:pyflakes_use_quickfix = 1
+let g:pyflakes_use_quickfix = 0
 let g:pep8_map='<leader>8'
 
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -101,13 +106,14 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
 " Execute the tests
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+nmap <silent><Leader>tf <Esc>:ManagePyTest file<CR>
+nmap <silent><Leader>tc <Esc>:ManagePyTest class<CR>
+nmap <silent><Leader>tm <Esc>:ManagePyTest method<CR>
+nmap <silent><Leader>ts <Esc>:ManagePyTest session<CR>
 " cycle through test errors
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
+nmap <silent><Leader>tn <Esc>:ManagePyTest next<CR>
+nmap <silent><Leader>tp <Esc>:ManagePyTest previous<CR>
+nmap <silent><Leader>te <Esc>:ManagePyTest error<CR>
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -145,4 +151,5 @@ if version >= 700
     " map spell on/off for English/Russian
     map <S-F11> <Esc>:call ChangeSpellLang()<CR>
 endif
+
 
