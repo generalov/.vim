@@ -101,19 +101,19 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%{GetGitBranch()}%=%-14.(%l,%c%V%)\ %P
 
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
 " Execute the tests
-nmap <silent><Leader>tf <Esc>:ManagePyTest file<CR>
-nmap <silent><Leader>tc <Esc>:ManagePyTest class<CR>
-nmap <silent><Leader>tm <Esc>:ManagePyTest method<CR>
-nmap <silent><Leader>ts <Esc>:ManagePyTest session<CR>
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+nmap <silent><Leader>ts <Esc>:Pytest session<CR>
 " cycle through test errors
-nmap <silent><Leader>tn <Esc>:ManagePyTest next<CR>
-nmap <silent><Leader>tp <Esc>:ManagePyTest previous<CR>
-nmap <silent><Leader>te <Esc>:ManagePyTest error<CR>
+nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
 " Add the virtualenv's site-packages to vim path
 py << EOF

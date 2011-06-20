@@ -29,7 +29,7 @@ git clone git://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree
 git clone git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes-vim
 git clone git://github.com/fs111/pydoc.vim.git bundle/pydoc
 git clone git://github.com/vim-scripts/pep8.git bundle/pep8
-git clone git://github.com/alfredodeza/pytest.vim.git bundle/py.test
+git clone git://github.com/generalov/pytest.vim.git bundle/managepy.test
 
 git clone git://github.com/reinh/vim-makegreen bundle/makegreen
 git clone git://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
