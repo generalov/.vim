@@ -7,13 +7,13 @@ mkdir bundle
 git clone git://github.com/tpope/vim-fugitive.git bundle/fugitive
 git clone git://github.com/msanders/snipmate.vim.git bundle/snipmate
 git clone git://github.com/tpope/vim-surround.git bundle/surround
-git clone git://github.com/tpope/vim-git.git bundle/git
+#git clone git://github.com/tpope/vim-git.git bundle/git
+git clone git://github.com/laarmen/git-vim.git bundle/git-vim
 git clone git://github.com/ervandew/supertab.git bundle/supertab
 git clone git://github.com/sontek/minibufexpl.vim.git bundle/minibufexpl
 git clone git://github.com/wincent/Command-T.git bundle/command-t
 git clone git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes-vim
 git clone git://github.com/mileszs/ack.vim.git bundle/ack
-git clone git://github.com/sjl/gundo.vim.git bundle/gundo
 git clone git://github.com/fs111/pydoc.vim.git bundle/pydoc
 git clone git://github.com/vim-scripts/pep8.git bundle/pep8
 git clone git://github.com/alfredodeza/pytest.vim.git bundle/py.test
@@ -22,6 +22,8 @@ git clone git://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
 git clone git://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree
 git clone git://github.com/sontek/rope-vim.git bundle/ropevim
 #git clone git://github.com/kablamo/VimDebug.git bundle/vimdebug
+# vim 7.3
+git clone git://github.com/sjl/gundo.vim.git bundle/gundo
 
 sed -i 's#git@github.com:kevinw/pyflakes.git#git://github.com/kevinw/pyflakes.git#g' bundle/pyflakes-vim/.git/config
 sed -i 's#git@github.com:kevinw/pyflakes.git#git://github.com/kevinw/pyflakes.git#g' bundle/pyflakes-vim/.gitmodules
