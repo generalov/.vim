@@ -3,7 +3,8 @@
 set -e
 
 mkdir bundle
-( cd autoload; wget -c --no-check-certificate https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim )
+[ ! -f autoload/pathogen.vim ] && ( wget -c --no-check-certificate \
+    -O autoload/pathogen.vim https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim )
 
 # Typing
 git clone git://github.com/msanders/snipmate.vim.git bundle/snipmate
@@ -18,22 +19,36 @@ git clone git://github.com/laarmen/git-vim.git bundle/git-vim
 # Navigation
 git clone git://github.com/sontek/rope-vim.git bundle/ropevim
 git clone git://github.com/sontek/minibufexpl.vim.git bundle/minibufexpl
-git clone git://github.com/wincent/Command-T.git bundle/command-t; ( cd bundle/command-t && rake make )
+git clone git://github.com/wincent/Command-T.git bundle/command-t && ( cd bundle/command-t && rake make )
 # Graph your Vim undo tree in style.
 git clone git://github.com/sjl/gundo.vim.git bundle/gundo # @vim73
 # Grep replacement
-git clone git://github.com/mileszs/ack.vim.git bundle/ack; ( which ack-grep || sudo apt-get install ack-grep )
+git clone git://github.com/mileszs/ack.vim.git bundle/ack && which ack-grep || (
+    sudo apt-get install ack-grep
+)
 git clone git://github.com/vim-scripts/The-NERD-tree.git bundle/nerdtree
+git clone git://github.com/int3/vim-taglist-plus.git bundle/taglist-plus; which nodejs || (
+    sudo add-apt-repository ppa:richarvey/nodester
+    sudo apt-get update
+    sudo apt-get install nodejs
+    sudo ln -s /usr/bin/nodejs /usr/local/bin/node
+)
 
 # Python
 git clone git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes-vim
 git clone git://github.com/fs111/pydoc.vim.git bundle/pydoc
 git clone git://github.com/vim-scripts/pep8.git bundle/pep8
-git clone git://github.com/generalov/pytest.vim.git bundle/managepy.test
+git clone git://github.com/generalov/pytest.vim.git bundle/pytest.test
 
 git clone git://github.com/reinh/vim-makegreen bundle/makegreen
 git clone git://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
 #git clone git://github.com/kablamo/VimDebug.git bundle/vimdebug
+
+# Math
+git clone git://github.com/gregsexton/VimCalc.git bundle/vimcalc
+
+# Formats
+git clone git://github.com/davidoc/taskpaper.vim.git bundle/taskpaper
 
 
 sed -i 's#git@github.com:kevinw/pyflakes.git#git://github.com/kevinw/pyflakes.git#g' bundle/pyflakes-vim/.git/config

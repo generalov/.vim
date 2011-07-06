@@ -115,6 +115,9 @@ nmap <silent><Leader>tn <Esc>:Pytest next<CR>
 nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
 nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
+" Change to directory of the opened file
+nmap <silent> <Leader>cd :cd %:p:h<CR>
+
 " Add the virtualenv's site-packages to vim path
 py << EOF
 import os.path
