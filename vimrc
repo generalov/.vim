@@ -155,4 +155,6 @@ if version >= 700
     map <S-F11> <Esc>:call ChangeSpellLang()<CR>
 endif
 
-
+" buftabs
+noremap <C-left> :bprev<CR>
+noremap <C-right> :bnext<CR>
