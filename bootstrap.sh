@@ -2,9 +2,8 @@
 
 set -e
 
-mkdir bundle
-[ ! -f autoload/pathogen.vim ] && ( wget -c --no-check-certificate \
-    -O autoload/pathogen.vim https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim )
+mkdir -p bundle autoload
+wget -O autoload/pathogen.vim --no-check-certificate https://github.com/tpope/vim-pathogen/raw/master/autoload/pathogen.vim
 
 # Typing
 git clone git://github.com/msanders/snipmate.vim.git bundle/snipmate
@@ -42,7 +41,8 @@ git clone git://github.com/int3/vim-taglist-plus.git bundle/taglist-plus; which 
 git clone git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes-vim
 git clone git://github.com/fs111/pydoc.vim.git bundle/pydoc
 git clone git://github.com/vim-scripts/pep8.git bundle/pep8
-git clone git://github.com/generalov/pytest.vim.git bundle/pytest.test
+#git clone git://github.com/generalov/pytest.vim.git bundle/managepy.test
+git clone git://github.com/alfredodeza/pytest.vim.git bundle/pytest.vim
 
 git clone git://github.com/reinh/vim-makegreen bundle/makegreen
 git clone git://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
