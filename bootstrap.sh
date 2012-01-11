@@ -36,6 +36,7 @@ git clone git://github.com/int3/vim-taglist-plus.git bundle/taglist-plus; which 
     #sudo ln -s /usr/bin/nodejs /usr/local/bin/node
     true
 )
+git clone git://github.com/bogado/file-line.git bundle/file-line
 
 # Python
 git clone git://github.com/kevinw/pyflakes-vim.git bundle/pyflakes-vim
@@ -47,6 +48,11 @@ git clone git://github.com/alfredodeza/pytest.vim.git bundle/pytest.vim
 git clone git://github.com/reinh/vim-makegreen bundle/makegreen
 git clone git://github.com/vim-scripts/TaskList.vim.git bundle/tasklist
 #git clone git://github.com/kablamo/VimDebug.git bundle/vimdebug
+
+# JavaScript
+# reqires nodejs, rhino or spidermonkey
+#git clone git://github.com/othree/jslint.vim.git bundle/jslint
+git clone git://github.com/ichernev/jslint.vim.git bundle/jslint
 
 # Math
 git clone git://github.com/gregsexton/VimCalc.git bundle/vimcalc
